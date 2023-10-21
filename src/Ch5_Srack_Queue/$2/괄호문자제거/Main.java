@@ -1,37 +1,35 @@
 //설명
-//괄호가 입력되면 올바른 괄호이면 “YES", 올바르지 않으면 ”NO"를 출력합니다.
-//(())() 이것은 괄호의 쌍이 올바르게 위치하는 거지만, (()()))은 올바른 괄호가 아니다.
-//
-//입력
-//첫 번째 줄에 괄호 문자열이 입력됩니다. 문자열의 최대 길이는 30이다.
-//
-//출력
-//첫 번째 줄에 YES, NO를 출력한다.
+//입력된 문자열에서 소괄호 ( ) 사이에 존재하는 모든 문자를 제거하고 남은 문자만 출력하는 프로그램을 작성하세요.
 
-package Ch5_Srack_Queue.$1.올바른괄호;
+//입력
+//첫 줄에 문자열이 주어진다. 문자열의 길이는 100을 넘지 않는다.
+
+//출력
+//남은 문자만 출력한다.
+
+package Ch5_Srack_Queue.$2.괄호문자제거;
 
 import java.util.Scanner;
 import java.util.Stack;
 
+
 public class Main {
     public String solution(String str){
-        String answer = "YES";
+        String answer = "";
 
         Stack<Character> stack = new Stack<>();
+
         for(char x : str.toCharArray()){
             if(x == '('){
                 stack.push(x);
+            } else if(x == ')') {
+                stack.pop();
             } else {
                 if(stack.empty()){
-                    return "NO";
+                    answer += x;
                 }
-                stack.pop();
             }
         }
-        if(!stack.empty()){
-            return "NO";
-        }
-
         return answer;
     }
     public static void main(String[] args) {

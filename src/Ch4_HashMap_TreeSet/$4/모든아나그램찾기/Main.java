@@ -47,7 +47,7 @@ public class Main {
         return answer;
     }
     public static void main(String[] args) {
-        memo.Main T = new memo.Main();
+        Main T = new Main();
         Scanner s = new Scanner(System.in);
         String strS = s.next();
         String strT = s.next();
